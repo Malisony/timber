@@ -207,6 +207,21 @@ int main()
         ****************************************
         */
 
+        Event event;
+
+        while (window.pollEvent(event))
+        {
+            if (event.type == Event::KeyReleased && !paused)
+            {
+                // Listen for key presses again
+                acceptInput = true;
+
+                // hide the axe
+                spriteAxe.setPosition(2000,
+                    spriteAxe.getPosition().y);
+            }
+        }
+
         if (Keyboard::isKeyPressed(Keyboard::Escape))
         {
             window.close();
