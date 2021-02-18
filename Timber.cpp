@@ -1,5 +1,6 @@
 #include <sstream>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 using namespace sf;
 
 void updateBranches(int seed);
@@ -199,6 +200,25 @@ int main()
     // Control the player input
     bool acceptInput = false;
 
+    // Prepare the sounds
+    // The player chopping sound
+    SoundBuffer chopBuffer;
+    chopBuffer.loadFromFile("sound/chop.wav");
+    Sound chop;
+    chop.setBuffer(chopBuffer);
+
+    // The player has met his end under a branch
+    SoundBuffer deathBuffer;
+    deathBuffer.loadFromFile("sound/death.wav");
+    Sound death;
+    death.setBuffer(deathBuffer);
+
+    // Out of time
+    SoundBuffer ootBuffer;
+    ootBuffer.loadFromFile("sound/out_of_time.wav");
+    Sound outOfTime;
+    outOfTime.setBuffer(ootBuffer);
+
     while (window.isOpen())
     {
         /*
@@ -280,6 +300,9 @@ int main()
                 logActive = true;
 
                 acceptInput = false;
+
+                // Play a chop sound
+                chop.play();
             }
 
             // Handle the left cursor key
@@ -306,6 +329,9 @@ int main()
                 logSpeedY = true;
 
                 acceptInput = false;
+
+                // Play a chop sound
+                chop.play();
             }
         }
 
@@ -342,6 +368,9 @@ int main()
                     textRect.height / 2.0f);
 
                 messageText.setPosition(1920 / 2.0f, 1080 / 2.0f);
+
+                // Play the out of time sound
+                outOfTime.play();
             }
 
             // Setup the bee
@@ -535,6 +564,9 @@ int main()
 
                 messageText.setPosition(1920 / 2.0f,
                     1080 / 2.0f);
+
+                // Play the death sound
+                death.play();
             }
         } // End if(!paused)
 
