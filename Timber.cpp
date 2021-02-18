@@ -37,18 +37,29 @@ int main()
     spriteBackground.setPosition(0, 0);
 
     // Make a tree sprite
-    Texture textureTree;
-    textureTree.loadFromFile("graphics/tree.png");
-    Sprite spriteTree;
-    spriteTree.setTexture(textureTree);
-    spriteTree.setPosition(810, 0);
+    Texture textureTree1;
+    textureTree1.loadFromFile("graphics/tree.png");
+    Texture textureTree2;
+    textureTree2.loadFromFile("graphics/tree2.png");
+
+    Sprite spriteTree1;
+    spriteTree1.setTexture(textureTree1);
+    spriteTree1.setPosition(810, 0);
+
+    Sprite spriteTree2;
+    spriteTree2.setTexture(textureTree2);
+    spriteTree2.setPosition(0, -65);
+
+    Sprite spriteTree3;
+    spriteTree3.setTexture(textureTree2);
+    spriteTree3.setPosition(1500, -150);
 
     // Prepare the bee
     Texture textureBee;
     textureBee.loadFromFile("graphics/bee.png");
     Sprite spriteBee;
     spriteBee.setTexture(textureBee);
-    spriteBee.setPosition(0, 800);
+    spriteBee.setPosition(0, 2000);
 
     // Is the bee currently moving?
     bool beeActive = false;
@@ -172,7 +183,7 @@ int main()
     textureRIP.loadFromFile("graphics/rip.png");
     Sprite spriteRIP;
     spriteRIP.setTexture(textureRIP);
-    spriteRIP.setPosition(600, 860);
+    spriteRIP.setPosition(675, 2000);
 
     // Prepare the axe
     Texture textureAxe;
@@ -593,8 +604,10 @@ int main()
             window.draw(branches[i]);
         }
 
-        // Draw the tree
-        window.draw(spriteTree);
+        // Draw the trees
+        window.draw(spriteTree1);
+        window.draw(spriteTree2);
+        window.draw(spriteTree3);
 
         // Draw the player
         window.draw(spritePlayer);
