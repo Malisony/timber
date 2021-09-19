@@ -32,9 +32,9 @@ sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-network-d.lib;sfml-
 ## Screenshots
 
 <div style="display: flex; align-items: flex-start;">
-  <img src="https://github.com/kgoncharova/timber/blob/master/screenshots/screenshot1.png" height="200">
-  <img src="https://github.com/kgoncharova/timber/blob/master/screenshots/screenshot2.png" height="200">
-  <img src="https://github.com/kgoncharova/timber/blob/master/screenshots/screenshot3.png" height="200">
+  <img src="./screenshot1.png" height="200">
+  <img src="./screenshots/screenshot2.png" height="200">
+  <img src="./screenshots/screenshot3.png" height="200">
 </div>
 
 ## Demo for Windows
