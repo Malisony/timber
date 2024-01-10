@@ -280,7 +280,11 @@ int main()
             // Move the player into position
             spritePlayer.setPosition(675, 660);
 
-            acceptInput = true;
+            acceptInput = true; /*I had to eliminate this line of code in my project
+                                * to make the arrow inputs work properly.
+                                * With this line the character cut only one log at
+                                * startup (right or left) and then the arrows no longer worked.
+                                * I don't know why it doesn't work for me.*/
         }
 
         // Wrap the player controls to
